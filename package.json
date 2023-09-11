@@ -1,0 +1,21 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "description": "xxxx.",
+  "main": "server.js",
+  "scripts": {
+      "dev": "webpack --mode development && webpack-dev-server --mode development"
+  },
+  "author": "test",
+  "license": "PUBLIC",
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
+  "devDependencies": {
+    "expose-loader": "^4.1.0",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
