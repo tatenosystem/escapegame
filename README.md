@@ -1,12 +1,16 @@
 # 脱出ゲームつくーる(仮)
 
-DEMO用プロトタイプ プログラム
+![](title1.jpg)
 
-DEMO脱出ゲーム開始
+## DEMO用プロトタイプ プログラム
 
-DEMO脱出ゲーム シナリオJSON
+[DEMO脱出ゲーム 開始](https://tatenosystem.github.io/escapegame/)
+
+[DEMO脱出ゲーム シナリオJSON](/tatenosystem/escapegame/blob/main/scenes.js)
 
 ## 基本構造
+
+![](image1.jpg)
 
 - シーン(scene)
 - パーツ(parts)
@@ -80,6 +84,10 @@ FLAG_ON 10
 - パーツ位置 position (x, y, width, height)
 - スクリプト script[]
 - 他
+
+## エディタイメージ
+
+![](editor.jpg)
 
 ## 特記事項
 
