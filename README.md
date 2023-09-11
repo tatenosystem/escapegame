@@ -6,7 +6,7 @@
 
 [DEMO脱出ゲーム 開始](https://tatenosystem.github.io/escapegame/)
 
-[DEMO脱出ゲーム シナリオJSON](/tatenosystem/escapegame/blob/main/scenes.js)
+[DEMO脱出ゲーム シナリオJSON](scenes.js)
 
 ## 基本構造
 
@@ -92,6 +92,6 @@ FLAG_ON 10
 ## 特記事項
 
 プロトタイプを作成しましたが開発中止となったので、このネタを作りたい人は自由に作ってください。
-本プロトタイプ プログラムは自由に使ってくれて問題ありません。
+本プロトタイプ、企画、プログラムは自由に使ってくれて問題ありません。
 
 ※ Phaser3 ゲームライブラリに関しては https://phaser.io/ 参照
