@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>DOM DRAG</title>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<div style="position: relative; width: 800px; height: 600px; border: 1px solid #ccc; overflow: hidden;">
+
+<div class="draggableElement" style="position: absolute; width: 200px; height: 100px; top: 10px; left: 10px; background-color: #ccc; opacity: 0.5;"></div>
+<div class="draggableElement" style="position: absolute; width: 200px; height: 100px; top: 20px; left: 50px; background-color: #acc; opacity: 0.5;"></div>
+<div class="draggableElement" style="position: absolute; width: 200px; height: 100px; top: 30px; left: 100px; background-color: #cac; opacity: 0.5;"></div>
+
+</div>
+
+<script>
+let draggableElement = null;
+let startX, startY;
+let startLeft, startTop;
+let startWidth, startHeight;
+let dragMode = null;
+
+function dragStart(e)
+{
+    draggableElement = e.target;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    startLeft = parseInt(document.defaultView.getComputedStyle(draggableElement).left, 10);
+    startTop = parseInt(document.defaultView.getComputedStyle(draggableElement).top, 10);
+
+    startWidth = parseInt(document.defaultView.getComputedStyle(draggableElement).width, 10);
+    startHeight = parseInt(document.defaultView.getComputedStyle(draggableElement).height, 10);
+
+    // console.log('X: ' + Math.abs(startX - (startLeft + startWidth)));
+    // console.log('Y: ' + Math.abs(startY - (startTop + startHeight)));
+    if (Math.abs(startX - (startLeft + startWidth)) < 10 && Math.abs(startY - (startTop + startHeight)) < 10) {
+        dragMode = 'resize';
+        document.body.style.cursor = 'nwse-resize';
+    } else {
+        dragMode = "positon";
+        document.body.style.cursor = 'pointer';
+    }
+    console.log('dragMode: ' + dragMode);
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+}
+
+function dragEnd()
+{
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', dragEnd);
+
+    document.body.style.cursor = 'auto';
+    draggableElement = null;
+}
+
+function drag(e)
+{
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+
+    if (dragMode === 'positon') {
+        const newLeft = startLeft + deltaX;
+        const newTop = startTop + deltaY;
+        draggableElement.style.left = newLeft + 'px';
+        draggableElement.style.top = newTop + 'px';
+    } else {
+        const newWidth = startWidth + deltaX;
+        const newHeight = startHeight + deltaY;
+        draggableElement.style.width = newWidth + 'px';
+        draggableElement.style.height = newHeight + 'px';
+    }
+}
+
+const elements = document.querySelectorAll('.draggableElement');
+elements.forEach(element => {
+    element.addEventListener('mousedown', dragStart);
+});
+
+</script>
+</body>
+</html>
+
