@@ -8,6 +8,8 @@ yarn.lock
 *.tsbuildinfo
 *.js.map
 *.d.ts
+src/*.js
+src/*/*.js
 
 # Build output
 # dist/
