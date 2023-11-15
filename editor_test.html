@@ -17,6 +17,9 @@
         background-repeat: no-repeat;
         opacity: 0.7;
         color: #333;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
     }
     div.draggable {
         border: red 2px solid;
@@ -39,7 +42,7 @@
 <body>
 <div class="draggableArea">
     <div class="draggableElement" style="width: 200px; height: 100px; top: 10px; left: 10px; background-color: #ccc;">boor</div>
-    <div class="draggableElement" style="width: 200px; height: 100px; top: 20px; left: 50px; background-color: #acc;">windows</div>
+    <div class="draggableElement" style="width: 200px; height: 100px; top: 20px; left: 50px; background-color: #acc;">window</div>
     <div class="draggableElement" style="width: 80px; height: 80px; top: 30px; left: 100px; background-color: #cac; background-image: url('assets/key1.png');">key</div>
 </div>
 
